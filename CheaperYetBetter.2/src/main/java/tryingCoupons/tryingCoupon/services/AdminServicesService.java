@@ -181,7 +181,7 @@ public class AdminServicesService extends ClientService implements AdminService 
             authorities.add(new SimpleGrantedAuthority("ROLE_"+ Roles.ADMIN.name()));
             User userDetails = new User("admin@admin.com", "admin",authorities);
 
-            token = JWT.create().withSubject(userDetails.getUsername()).withExpiresAt(new Date(System.currentTimeMillis() +  30 * 1000))
+            token = JWT.create().withSubject/* the main subject of the token is the user details which is actually the username */(userDetails.getUsername()).withExpiresAt(new Date(System.currentTimeMillis() +  30 * 1000))
                     .withClaim("authorities", userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList())).sign(algorithm);
         }
         return isLogged;
