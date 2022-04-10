@@ -176,8 +176,8 @@ public class AdminServicesService extends ClientService implements AdminService 
 
     public boolean isLogged() {
         if(isLogged){
-            Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
-            List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+            Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());// security protocol level "256"
+            List<SimpleGrantedAuthority> authorities = new ArrayList<>();//The list of our authorities in the projects
             authorities.add(new SimpleGrantedAuthority("ROLE_"+ Roles.ADMIN.name()));
             User userDetails = new User("admin@admin.com", "admin",authorities);
 
