@@ -119,6 +119,11 @@ public class CustomerServiceMPL extends ClientService implements CustomerService
     }
 
     @Override
+    public List<Coupon> findAllAvailableCoupons() {
+        return COUPON_REPO.getAllAvailableCoupons(Date.valueOf(LocalDate.now()));
+    }
+
+    @Override
     public void logOut(){
         isLogged = false;
         token = null;

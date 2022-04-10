@@ -11,5 +11,6 @@ public interface CustomerService {
     public List<Coupon> getCustomerCouponByCategory(int categoryId) throws CouponException;
     public List<Coupon> getCustomerCouponByMaxPriced(int maxPrice) throws CouponException;
     public String getCustomerDetails() throws CustomerException;
+    public List<Coupon> findAllAvailableCoupons();
     public void logOut();
 }

@@ -1,5 +1,4 @@
 package tryingCoupons.tryingCoupon.controller;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +10,11 @@ import tryingCoupons.tryingCoupon.exceptions.LoginException;
 import tryingCoupons.tryingCoupon.services.AdminServicesService;
 
 import java.util.List;
+
+//responsible for the "crud" requests
+
+// send out the connection to the backend/ create paths between the program and the database
+//building the crud
 
 @RestController
 @RequestMapping("/admin")

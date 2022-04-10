@@ -1,6 +1,4 @@
 package tryingCoupons.tryingCoupon.Security;
-
-
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -30,6 +28,15 @@ import static java.util.Arrays.stream;
 import static org.springframework.http.HttpStatus.FORBIDDEN;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+//filtering the requests that arrive to the jwt
+//with the rest template that can create requests to http independently
+// login, and root requests will go to the login screen
+//and other requests will get filtered and authentication proses by catting the bearer from th header
+//then decoding the token that is left from the header and Verifying it.
+//if it got verified properly it goes on in the filters chain,
+//if it doesn't verified properly an exception will be thrown.
+// and if the token is fine but has got expired, then it will give the user a new token
+
 public class JwtRequestFilter extends OncePerRequestFilter {
     RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
 
@@ -51,7 +58,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             response.sendRedirect("http://localhost:8080/login");
         }
             if(request.getServletPath().equals("/login")){
-                //System.out.println("im here");
+
                 filterChain.doFilter(request,response);
 
             }else{

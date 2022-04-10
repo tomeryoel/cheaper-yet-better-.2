@@ -1,5 +1,4 @@
 package tryingCoupons.tryingCoupon.controller;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +9,8 @@ import tryingCoupons.tryingCoupon.beans.Coupon;
 import tryingCoupons.tryingCoupon.services.AdminService;
 
 import java.util.List;
+
+
 
 @RestController
 @RequestMapping("/guest")

@@ -15,7 +15,7 @@ import tryingCoupons.tryingCoupon.repositories.CustomerRepo;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-
+// this class takes username and translate it to user details
 
 
 @Service
@@ -27,7 +27,7 @@ public class UserDetailsServiceMPL implements UserDetailsService {
     private final CustomerServiceMPL customerServiceMPL;
     private final CustomerRepo customerRepo;
     private final BCryptPasswordEncoder passwordEncoder;
-// the service takes a username and translate it to the fiting user details object
+// the service takes a username and translate it to the fitting user details object
     // when it runs oll over the repositories of the users
 
     @Override
