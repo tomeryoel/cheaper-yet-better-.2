@@ -1,7 +1,7 @@
 package tryingCoupons.tryingCoupon.beans;
-
 import lombok.Builder;
 
+//create the user with name and password
 
 @Builder
 public class UserProp {
