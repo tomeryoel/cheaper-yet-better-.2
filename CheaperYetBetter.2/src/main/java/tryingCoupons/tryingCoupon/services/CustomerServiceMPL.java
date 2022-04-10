@@ -140,7 +140,7 @@ public class CustomerServiceMPL extends ClientService implements CustomerService
             List<SimpleGrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority("ROLE_"+ Roles.CUSTOMER.name()));
             User userDetails = new User(thisCustomer.getEmail(), thisCustomer.getPassword(),authorities);
-            token = JWT.create().withSubject(userDetails.getUsername()).withExpiresAt(new Date(System.currentTimeMillis() +30 *1000))
+            token = JWT.create().withSubject(userDetails.getUsername()).withExpiresAt(new Date(System.currentTimeMillis() +15 *60000))
                     .withClaim("authorities", userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList())).sign(algorithm);
         }
         return token;
