@@ -62,13 +62,6 @@ public interface CouponRepo extends JpaRepository<Coupon,Integer> {
     @Query(value = "SELECT * FROM coupons WHERE end_date > ? AND amount > 0", nativeQuery = true)
     List<Coupon> getAllAvailableCoupons(Date expired);
 
-/*
-    shirelle - i love you :3
-    will you marry me?
-    hoang- yes i will
-    shirelle - omg!!! im so happy!
-
- */
 
 
 
