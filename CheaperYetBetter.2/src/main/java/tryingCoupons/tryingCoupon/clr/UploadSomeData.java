@@ -103,7 +103,7 @@ public class UploadSomeData implements CommandLineRunner {
 
         Customer customer = Customer.builder()
                 .firstName("TOMER")
-                .lastName("OMO")
+                .lastName("MAMAN")
                 .email("wannadie@die.com")
                 .password("dieWithMe")
                 .coupons(customerCoupons)
@@ -111,7 +111,7 @@ public class UploadSomeData implements CommandLineRunner {
 
         Customer customer2 = Customer.builder()
                 .firstName("Itzik")
-                .lastName("OMO")
+                .lastName(" BEN ZUR")
                 .email("wannalive@live.com")
                 .password("liveWithMe")
                 .coupons(customerCoupons2)
