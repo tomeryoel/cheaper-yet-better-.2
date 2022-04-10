@@ -29,7 +29,7 @@ public class CategoryInjection {
         this.category=category;
     }
 
-
+    //one category- many coupons
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
     private List<Coupon> couponsBelongs= new ArrayList<>();
 
@@ -58,16 +58,16 @@ public class CategoryInjection {
 }
 
 
-@Configuration
+@Configuration// runs before everything else
 @RequiredArgsConstructor
 class Injection{
-    private final CategoryRepo categoryJPA;
+    private final CategoryRepo categoryJPA;// give accesses to the repository
 
     @Bean
     protected void categoryInjection(){
         Arrays.stream(Category.values()).forEach(c-> categoryJPA.save(CategoryInjection.builder()
                         .category(c)
-                .build()));
+                .build()));//stream that runs all over the values of the "category- and save it/inject it to the table
     }
 
 }

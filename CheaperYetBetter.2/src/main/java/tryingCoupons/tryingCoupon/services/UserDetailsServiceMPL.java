@@ -28,6 +28,7 @@ public class UserDetailsServiceMPL implements UserDetailsService {
     private final CustomerRepo customerRepo;
     private final BCryptPasswordEncoder passwordEncoder;
 // the service takes a username and translate it to the fiting user details object
+    // when it runs oll over the repositories of the users
 
     @Override
     @Transactional
